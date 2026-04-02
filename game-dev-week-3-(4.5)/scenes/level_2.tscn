@@ -1,0 +1,91 @@
+[gd_scene format=4 uid="uid://duidydhcvb4q7"]
+
+[ext_resource type="Script" uid="uid://cnt83dxotldrl" path="res://scripts/player.gd" id="1_b4j7a"]
+[ext_resource type="Texture2D" uid="uid://cwgvls1tuap7c" path="res://icon.svg" id="2_wo48x"]
+[ext_resource type="TileSet" uid="uid://bkmuu5s2d3byd" path="res://images/tile_set.tres" id="3_y0kc7"]
+[ext_resource type="PackedScene" uid="uid://yujop7bqbkux" path="res://collectables/scenes/coin_ui.tscn" id="4_ne2mo"]
+[ext_resource type="Script" uid="uid://hyvcikemitti" path="res://scripts/coin_ui.gd" id="5_6cvei"]
+[ext_resource type="Texture2D" uid="uid://cykv4n614mebi" path="res://images/level2.png" id="6_wo48x"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_que50"]
+size = Vector2(38, 37.99997)
+
+[node name="Level2" type="Node2D" unique_id=1371850559]
+
+[node name="Player" type="CharacterBody2D" parent="." unique_id=1658908122]
+z_index = -1
+position = Vector2(-1985, 1326)
+script = ExtResource("1_b4j7a")
+
+[node name="Sprite2D" type="Sprite2D" parent="Player" unique_id=1060887705]
+position = Vector2(7.6293945e-06, 30.000004)
+scale = Vector2(0.2968752, 0.2968752)
+texture = ExtResource("2_wo48x")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player" unique_id=2054000202]
+position = Vector2(3.0517578e-05, 30)
+shape = SubResource("RectangleShape2D_que50")
+
+[node name="Camera2D" type="Camera2D" parent="Player" unique_id=661805794]
+position = Vector2(3.0517578e-05, 13.999977)
+zoom = Vector2(2.5, 2.5)
+
+[node name="CoyoteTimer" type="Timer" parent="Player" unique_id=1850430319]
+wait_time = 0.1
+one_shot = true
+
+[node name="JumpBufferTimer" type="Timer" parent="Player" unique_id=163640497]
+wait_time = 0.12
+one_shot = true
+
+[node name="Left_HeadNudge" type="RayCast2D" parent="Player" unique_id=455277206]
+position = Vector2(-9.9999695, 14)
+target_position = Vector2(0, -4)
+
+[node name="Left_HeadNudge2" type="RayCast2D" parent="Player" unique_id=1156902277]
+position = Vector2(-15.9999695, 14)
+target_position = Vector2(0, -4)
+
+[node name="Right_HeadNudge" type="RayCast2D" parent="Player" unique_id=421743100]
+position = Vector2(10.0000305, 14)
+target_position = Vector2(0, -4)
+
+[node name="Right_HeadNudge2" type="RayCast2D" parent="Player" unique_id=1895758048]
+position = Vector2(16.00003, 14)
+target_position = Vector2(0, -4)
+
+[node name="Left_LedgeHop" type="RayCast2D" parent="Player" unique_id=864546198]
+position = Vector2(-15.9999695, 45)
+target_position = Vector2(-6, 0)
+
+[node name="Left_LedgeHop2" type="RayCast2D" parent="Player" unique_id=1399118463]
+position = Vector2(-15.9999695, 39)
+target_position = Vector2(-6, 0)
+
+[node name="Right_LedgeHop" type="RayCast2D" parent="Player" unique_id=1389115462]
+position = Vector2(16.00003, 45)
+target_position = Vector2(6, 0)
+
+[node name="Right_LedgeHop2" type="RayCast2D" parent="Player" unique_id=1117590187]
+position = Vector2(16.00003, 39)
+target_position = Vector2(6, 0)
+
+[node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=948888704]
+tile_map_data = PackedByteArray("AACB/1YAAQABAAMAAACB/1cAAQAAAAMAAGCB/1gAAQAAAAMAAGCB/1kAAQAAAAMAAGCB/1oAAQAAAAMAAGCB/1sAAQAAAAMAAGCC/1YAAQAAAAMAAACC/1cAAQAAAAIAAACC/1gAAQAAAAIAAACC/1kAAQAAAAIAAACC/1oAAQAAAAIAAACC/1sAAQAAAAIAAACD/1YAAQAAAAMAAACD/1cAAQAAAAIAAACD/1gAAQAAAAIAAACD/1kAAQAAAAIAAACD/1oAAQAAAAIAAACD/1sAAQAAAAIAAACE/1YAAQAAAAMAAACE/1cAAQAAAAIAAACE/1gAAQAAAAIAAACE/1kAAQAAAAIAAACE/1oAAQAAAAIAAACE/1sAAQAAAAIAAACF/1YAAQAAAAMAAACF/1cAAQAAAAIAAACF/1gAAQAAAAIAAACF/1kAAQAAAAIAAACF/1oAAQAAAAIAAACF/1sAAQAAAAIAAACG/1YAAQAAAAMAAACG/1cAAQAAAAIAAACG/1gAAQAAAAIAAACG/1kAAQAAAAIAAACG/1oAAQAAAAIAAACG/1sAAQAAAAIAAACH/1YAAQAAAAMAAACH/1cAAQAAAAIAAACH/1gAAQAAAAIAAACH/1kAAQAAAAIAAACH/1oAAQAAAAIAAACH/1sAAQAAAAIAAACI/1YAAQAAAAMAAACI/1cAAQAAAAIAAACI/1gAAQAAAAIAAACI/1kAAQAAAAIAAACI/1oAAQAAAAIAAACI/1sAAQAAAAIAAACJ/1YAAQAAAAMAAACJ/1cAAQAAAAIAAACJ/1gAAQAAAAIAAACJ/1kAAQAAAAIAAACJ/1oAAQAAAAIAAACJ/1sAAQAAAAIAAACK/1YAAQAAAAMAAACK/1cAAQAAAAIAAACK/1gAAQAAAAIAAACK/1kAAQAAAAIAAACK/1oAAQAAAAIAAACK/1sAAQAAAAIAAACL/1YAAQAAAAMAAACL/1cAAQAAAAIAAACL/1gAAQAAAAIAAACL/1kAAQAAAAIAAACL/1oAAQAAAAIAAACL/1sAAQAAAAIAAACM/1YAAQAAAAMAAACM/1cAAQAAAAIAAACM/1gAAQAAAAIAAACM/1kAAQAAAAIAAACM/1oAAQAAAAIAAACM/1sAAQAAAAIAAACN/1YAAQAAAAMAAACN/1cAAQAAAAIAAACN/1gAAQAAAAIAAACN/1kAAQAAAAIAAACN/1oAAQAAAAIAAACN/1sAAQAAAAIAAACO/1YAAQAAAAMAAACO/1cAAQAAAAIAAACO/1gAAQAAAAIAAACO/1kAAQAAAAIAAACO/1oAAQAAAAIAAACO/1sAAQAAAAIAAACP/1YAAQAAAAMAAACP/1cAAQAAAAIAAACP/1gAAQAAAAIAAACP/1kAAQAAAAIAAACP/1oAAQAAAAIAAACP/1sAAQAAAAIAAACQ/1YAAQAAAAMAAACQ/1cAAQAAAAIAAACQ/1gAAQAAAAIAAACQ/1kAAQAAAAIAAACQ/1oAAQAAAAIAAACQ/1sAAQAAAAIAAACR/1YAAQAAAAMAAACR/1cAAQAAAAIAAACR/1gAAQAAAAIAAACR/1kAAQAAAAIAAACR/1oAAQAAAAIAAACR/1sAAQAAAAIAAACS/1YAAQAAAAMAAACS/1cAAQAAAAIAAACS/1gAAQAAAAIAAACS/1kAAQAAAAIAAACS/1oAAQAAAAIAAACS/1sAAQAAAAIAAACT/1YAAQACAAMAAACT/1cAAQAAAAMAAFCT/1gAAQAAAAMAAFCT/1kAAQAAAAMAAFCT/1oAAQAAAAMAAFCT/1sAAQAAAAMAAFCC/1wAAQAAAAIAAACD/1wAAQAAAAIAAACE/1wAAQAAAAIAAACF/1wAAQAAAAIAAACG/1wAAQAAAAIAAACH/1wAAQAAAAIAAACI/1wAAQAAAAIAAACJ/1wAAQAAAAIAAACK/1wAAQAAAAIAAACL/1wAAQAAAAIAAACM/1wAAQAAAAIAAACN/1wAAQAAAAIAAACO/1wAAQAAAAIAAACP/1wAAQAAAAIAAACQ/1wAAQAAAAIAAACR/1wAAQAAAAIAAACS/1wAAQAAAAIAAACT/1wAAQAAAAMAAFCB/1wAAQAAAAMAAGCB/10AAQAAAAMAAGCC/10AAQAAAAIAAACD/10AAQAAAAIAAACE/10AAQAAAAIAAACF/10AAQAAAAIAAACG/10AAQAAAAIAAACH/10AAQAAAAIAAACI/10AAQAAAAIAAACJ/10AAQAAAAIAAACK/10AAQAAAAIAAACL/10AAQAAAAIAAACM/10AAQAAAAIAAACN/10AAQAAAAIAAACO/10AAQAAAAIAAACP/10AAQAAAAIAAACQ/10AAQAAAAIAAACR/10AAQAAAAIAAACS/10AAQAAAAIAAACT/10AAQAAAAMAAFAEAEgAAQACAAMAAAAEAEkAAQAAAAMAAFACAEgAAQABAAMAAAACAEkAAQAAAAMAAGADAEgAAQAAAAAAAAADAEkAAQAAAAIAAAAKAEEAAQABAAMAAAAKAEIAAQAAAAMAAGALAEEAAQAAAAMAAAALAEIAAQAAAAIAAAAMAEEAAQACAAMAAAAMAEIAAQAAAAMAAFA=")
+tile_set = ExtResource("3_y0kc7")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1124587955]
+
+[node name="CoinUi" parent="CanvasLayer" unique_id=935434545 instance=ExtResource("4_ne2mo")]
+offset_left = -6.0
+offset_top = -17.0
+offset_right = -6.0
+offset_bottom = -17.0
+script = ExtResource("5_6cvei")
+metadata/_edit_use_anchors_ = true
+
+[node name="Collisions" type="Node" parent="." unique_id=1268341471]
+
+[node name="Level2" type="Sprite2D" parent="Collisions" unique_id=1689665769]
+position = Vector2(-1877, 1439)
+texture = ExtResource("6_wo48x")

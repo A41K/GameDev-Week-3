@@ -5,7 +5,7 @@ class_name Player extends CharacterBody2D
 
 var coyote_time_activated: bool = false
 
-const jump_height: float = -400.0
+var jump_height: float = -400.0
 var gravity: float = 20.0
 const max_gravity: float = 18
 
@@ -73,4 +73,8 @@ func _on_spike_2_body_entered(body: Node2D) -> void:
 
 
 func _on_flag_body_entered(body: Node2D) -> void:
+	pass # Replace with function body.
+
+
+func _on_nextscene_body_entered(body: Node2D) -> void:
 	pass # Replace with function body.

@@ -137,7 +137,7 @@ scale = Vector2(0.35999525, 1.0267816)
 script = ExtResource("8_jifap")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Collisions/NO ENTER" unique_id=486664996]
-position = Vector2(-59.723022, 1.947998)
+position = Vector2(-55.556305, 0.974081)
 scale = Vector2(1, 0.9999998)
 shape = SubResource("RectangleShape2D_0o2or")
 
@@ -145,7 +145,7 @@ shape = SubResource("RectangleShape2D_0o2or")
 light_mask = 2
 visibility_layer = 2
 z_index = -5
-position = Vector2(-556, 484)
+position = Vector2(-628, 485)
 scale = Vector2(0.70162046, 0.70162034)
 texture = ExtResource("10_xl61e")
 
