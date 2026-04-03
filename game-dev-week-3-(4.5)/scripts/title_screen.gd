@@ -16,7 +16,7 @@ func _on_start_pressed() -> void:
 
 
 func _on_bsettings_2_pressed() -> void:
-	pass # Replace with function body.
+	get_tree().change_scene_to_file("res://scenes/tutorial.tscn")
 
 
 func _on_exit_3_pressed() -> void:

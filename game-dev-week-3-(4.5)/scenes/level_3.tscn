@@ -15,6 +15,8 @@
 [ext_resource type="Script" uid="uid://sogd1x33c77w" path="res://scripts/CoinLock.gd" id="12_ax3dk"]
 [ext_resource type="Texture2D" uid="uid://buvr5okn6hdhj" path="res://images/arrow.png" id="13_q2dsb"]
 [ext_resource type="Texture2D" uid="uid://dso2opbyw5lf8" path="res://images/spikes.png" id="14_p3r0x"]
+[ext_resource type="Script" uid="uid://dsj8lxrcb8k2q" path="res://scripts/next_scene4.gd" id="16_ema3p"]
+[ext_resource type="Texture2D" uid="uid://cuf0q54uul10b" path="res://images/Flag.png" id="17_8uepa"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vcx5n"]
 size = Vector2(38, 37.99997)
@@ -50,6 +52,17 @@ b = Vector2(0.875, 9)
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_una4e"]
 a = Vector2(-4, 4)
 b = Vector2(-18, 32)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_q7pjq"]
+a = Vector2(-4, -3)
+b = Vector2(-31, 16)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_wa6ex"]
+a = Vector2(-7, 19)
+b = Vector2(-34, 6)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_sx8yt"]
+size = Vector2(6, 50)
 
 [node name="Level3" type="Node2D" unique_id=31895470]
 
@@ -404,6 +417,29 @@ shape = SubResource("SegmentShape2D_5xqnf")
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="Spikes/Spike5" unique_id=519463400]
 position = Vector2(43, 24)
 shape = SubResource("SegmentShape2D_una4e")
+
+[node name="Flag" type="Node" parent="." unique_id=131658654]
+
+[node name="Nextscene" type="Area2D" parent="Flag" unique_id=90061286]
+position = Vector2(2696, 305)
+script = ExtResource("16_ema3p")
+
+[node name="Sprite2D" type="Sprite2D" parent="Flag/Nextscene" unique_id=1327349162]
+position = Vector2(-5.5, 43.5)
+scale = Vector2(0.3828125, 0.3828125)
+texture = ExtResource("17_8uepa")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Flag/Nextscene" unique_id=1359063801]
+position = Vector2(4.5, 21.5)
+shape = SubResource("SegmentShape2D_q7pjq")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Flag/Nextscene" unique_id=956295617]
+position = Vector2(7.5, 31.5)
+shape = SubResource("SegmentShape2D_wa6ex")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="Flag/Nextscene" unique_id=340937242]
+position = Vector2(3.5, 43.5)
+shape = SubResource("RectangleShape2D_sx8yt")
 
 [connection signal="body_entered" from="WallStick/Area2D" to="Player" method="_on_area_2d_body_entered"]
 [connection signal="body_entered" from="Collisions/Death3" to="Collisions/Death3" method="_on_body_entered"]

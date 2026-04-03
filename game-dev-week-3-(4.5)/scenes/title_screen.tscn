@@ -115,7 +115,7 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_1a2ex")
 theme_override_styles/pressed_mirrored = SubResource("StyleBoxFlat_sa3yf")
 theme_override_styles/hover = SubResource("StyleBoxFlat_s4lrb")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_sa3yf")
-text = "Options
+text = "Tutorial
 "
 
 [node name="Button3" type="Button" parent="VBoxContainer" unique_id=1137462159]
