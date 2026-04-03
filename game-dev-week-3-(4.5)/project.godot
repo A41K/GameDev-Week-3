@@ -35,6 +35,7 @@ settings/size/viewport_height=720
 window/size/viewport_width=1250
 window/size/viewport_height=720
 window/size/borderless=true
+window/stretch/mode="canvas_items"
 
 [editor_plugins]
 
