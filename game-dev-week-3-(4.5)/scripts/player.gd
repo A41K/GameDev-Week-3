@@ -9,6 +9,8 @@ var jump_height: float = -400.0
 var gravity: float = 20.0
 const max_gravity: float = 18
 
+var is_wall_sticking: bool = false
+
 const max_speed: float = 300
 const acceleration: float = 16
 const friction: float = 20
@@ -35,11 +37,13 @@ func _physics_process(delta: float) -> void:
 		if JumpBufferTimer.is_stopped():
 			JumpBufferTimer.start()
 			
-	if !JumpBufferTimer.is_stopped() and (!CoyoteTimer.is_stopped() or is_on_floor()):
+	if !JumpBufferTimer.is_stopped() and (!CoyoteTimer.is_stopped() or is_on_floor() or is_wall_sticking):
 		velocity.y = jump_height
 		JumpBufferTimer.stop()
 		CoyoteTimer.stop()
 		coyote_time_activated = true
+		if is_wall_sticking:
+			is_wall_sticking = false
 		
 	if velocity.y < jump_height/2.0:
 		var head_collision: Array = [$Left_HeadNudge.is_colliding(), $Left_HeadNudge2.is_colliding(), $Right_HeadNudge.is_colliding(), $Right_HeadNudge2.is_colliding()]
