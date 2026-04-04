@@ -7,4 +7,5 @@ func _ready() -> void:
 func _on_body_entered(body: Node2D) -> void:
 	if body.name == "Player":
 		GameController.save_coins()
-		get_tree().change_scene_to_file("res://scenes/level_1.tscn")
+		GameController.clear_respawn_point()
+		get_tree().change_scene_to_file("res://scenes/level_2.tscn")
