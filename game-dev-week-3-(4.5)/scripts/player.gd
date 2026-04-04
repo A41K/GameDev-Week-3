@@ -4,14 +4,16 @@ class_name Player extends CharacterBody2D
 @onready var JumpBufferTimer: Timer = $JumpBufferTimer
 
 var coyote_time_activated: bool = false
+var spawn_position: Vector2
 
 
 func _ready() -> void:
 	add_to_group("player")
-	global_position = GameController.get_respawn_point(global_position)
+	spawn_position = global_position
+	global_position = GameController.get_respawn_point(spawn_position)
 
 func respawn() -> void:
-	global_position = GameController.get_respawn_point(global_position)
+	global_position = GameController.get_respawn_point(spawn_position)
 	velocity = Vector2.ZERO
 	gravity = 20.0
 	coyote_time_activated = false

@@ -22,6 +22,8 @@
 [ext_resource type="Texture2D" uid="uid://ngo401ckker8" path="res://images/tutorial/jump.png" id="16_dwom6"]
 [ext_resource type="Texture2D" uid="uid://1rp5pf52776b" path="res://images/tutorial/flag.png" id="19_bl2xa"]
 [ext_resource type="Texture2D" uid="uid://caha618fw6suv" path="res://images/tutorial.png" id="21_bl2xa"]
+[ext_resource type="Script" uid="uid://domwhcacs5gdi" path="res://scripts/checkpoint.gd" id="23_feaue"]
+[ext_resource type="Texture2D" uid="uid://c03hogb1xfpy3" path="res://images/Checkpoint.png" id="24_210s6"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_15kfc"]
 size = Vector2(38, 37.99997)
@@ -62,6 +64,9 @@ b = Vector2(-34, 6)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_sbw1o"]
 size = Vector2(6, 50)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_06rsu"]
+size = Vector2(21, 43)
 
 [node name="Tutorial" type="Node2D" unique_id=36340455]
 
@@ -173,7 +178,7 @@ position = Vector2(-1268, 1309)
 script = ExtResource("7_vrdqu")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Collisions/Death3" unique_id=275110294]
-position = Vector2(-224, -247)
+position = Vector2(-225, -255)
 shape = SubResource("RectangleShape2D_feaue")
 
 [node name="Death4" type="Area2D" parent="Collisions" unique_id=1064096334]
@@ -333,6 +338,21 @@ texture = ExtResource("19_bl2xa")
 position = Vector2(-1870.0001, 1056.0001)
 scale = Vector2(0.23633489, 0.23633489)
 texture = ExtResource("21_bl2xa")
+
+[node name="Checkpoint" type="Node" parent="." unique_id=549911354]
+
+[node name="Area2D" type="Area2D" parent="Checkpoint" unique_id=1864193936]
+position = Vector2(-1322, 943)
+script = ExtResource("23_feaue")
+
+[node name="Sprite2D" type="Sprite2D" parent="Checkpoint/Area2D" unique_id=1009397060]
+position = Vector2(11.000004, 47.000004)
+scale = Vector2(0.0558691, 0.05586909)
+texture = ExtResource("24_210s6")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Checkpoint/Area2D" unique_id=173784135]
+position = Vector2(10.5, 46.5)
+shape = SubResource("RectangleShape2D_06rsu")
 
 [connection signal="body_entered" from="Collisions/Death3" to="Collisions/Death3" method="_on_body_entered"]
 [connection signal="body_entered" from="Collisions/Death4" to="Collisions/Death4" method="_on_body_entered"]
