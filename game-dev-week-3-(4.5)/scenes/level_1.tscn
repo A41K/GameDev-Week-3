@@ -364,6 +364,14 @@ texture = ExtResource("14_1s4pk")
 position = Vector2(10.5, 46.5)
 shape = SubResource("RectangleShape2D_x2xxo")
 
+[node name="Label" type="Label" parent="Checkpoint/Area2D" unique_id=1972815609]
+offset_left = -37.0
+offset_top = 8.0
+offset_right = 60.0
+offset_bottom = 22.0
+theme_override_font_sizes/font_size = 10
+text = "Checkpoint reached"
+
 [node name="Level1" type="Sprite2D" parent="." unique_id=829487914]
 position = Vector2(-977, 794)
 texture = ExtResource("7_15mv3")

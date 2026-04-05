@@ -388,6 +388,14 @@ texture = ExtResource("16_jrosa")
 position = Vector2(10.5, 46.5)
 shape = SubResource("RectangleShape2D_sbc0t")
 
+[node name="Label" type="Label" parent="checkpoint/Area2D2" unique_id=1573170646]
+offset_left = -37.0
+offset_top = 8.0
+offset_right = 60.0
+offset_bottom = 22.0
+theme_override_font_sizes/font_size = 10
+text = "Checkpoint reached"
+
 [node name="Area2D3" type="Area2D" parent="checkpoint" unique_id=1299645051]
 position = Vector2(-1762, 445)
 script = ExtResource("15_u88kh")
@@ -400,6 +408,14 @@ texture = ExtResource("16_jrosa")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="checkpoint/Area2D3" unique_id=202423781]
 position = Vector2(10.5, 46.5)
 shape = SubResource("RectangleShape2D_sbc0t")
+
+[node name="Label" type="Label" parent="checkpoint/Area2D3" unique_id=817563009]
+offset_left = -37.0
+offset_top = 8.0
+offset_right = 60.0
+offset_bottom = 22.0
+theme_override_font_sizes/font_size = 10
+text = "Checkpoint reached"
 
 [connection signal="body_entered" from="Collisions/Death3" to="Collisions/Death3" method="_on_body_entered"]
 [connection signal="body_entered" from="Collisions/Death4" to="Collisions/Death4" method="_on_body_entered"]

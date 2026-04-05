@@ -481,6 +481,14 @@ texture = ExtResource("17_7qsfm")
 position = Vector2(10.5, 46.5)
 shape = SubResource("RectangleShape2D_bv48q")
 
+[node name="Label" type="Label" parent="Checkpoint/Area2D" unique_id=899917165]
+offset_left = -37.0
+offset_top = 8.0
+offset_right = 60.0
+offset_bottom = 22.0
+theme_override_font_sizes/font_size = 10
+text = "Checkpoint reached"
+
 [connection signal="body_entered" from="Collisions/Death2" to="Collisions/Death2" method="_on_body_entered"]
 [connection signal="body_entered" from="Collisions/Death3" to="Collisions/Death3" method="_on_body_entered"]
 [connection signal="body_entered" from="Collisions/Death4" to="Collisions/Death4" method="_on_body_entered"]
